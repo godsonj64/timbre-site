@@ -105,6 +105,19 @@ p:last-child { margin-bottom: 0; }
 }
 em { font-style: normal; color: var(--ink); }
 
+/* A link inside a line of prose, rather than a button: the Intel Mac
+   disambiguation under the download buttons is the only place this page
+   uses one. Underlined by default so it reads as a link on a background
+   this dark, where colour alone is a weak signal; the accent only shows up
+   on hover, so it does not compete with the two primary buttons above it. */
+.sub a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--ink-faint);
+  text-underline-offset: 2px;
+}
+.sub a:hover { color: var(--accent-lit); text-decoration-color: var(--accent-lit); }
+
 /* -------------------------------------------------------------- hero */
 
 .hero {
