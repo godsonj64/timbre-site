@@ -235,6 +235,24 @@ em { font-style: normal; color: var(--ink); }
 }
 .stage h3 { font-size: clamp(22px, 2.5vw, 28px); margin-bottom: 14px; }
 
+/* Visuals & Edit is the one stage that shows two screens, not one -- the
+   auto-planned shot list next to the timeline it feeds. It gets more of the
+   row's width than a single-screenshot stage does, or two app screenshots
+   side by side would be too small to read.
+
+   This is the 4th stage in the list, so the existing zigzag rule two
+   declarations up (`.stage:nth-child(even) .stage-text { order: 2; }`)
+   pushes its text to source-order 2 -- CSS Grid auto-placement sorts by
+   order before it assigns tracks, so `.shot-pair`, left at the default
+   order, is what actually lands in the *first* column here, not
+   `.stage-text`. The wide track has to be first for the same reason. */
+.stage-pair { grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr); }
+.shot-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
 /* -------------------------------------------------------------- split */
 
 .split {
@@ -324,7 +342,9 @@ em { font-style: normal; color: var(--ink); }
 
 @media (max-width: 820px) {
   .stage,
+  .stage-pair,
   .split { grid-template-columns: 1fr; }
+  .shot-pair { grid-template-columns: 1fr; }
   .stage:nth-child(even) .stage-text,
   .split.reverse .split-text { order: 0; }
   .masthead img { max-height: 30vh; }
