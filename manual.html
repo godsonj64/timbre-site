@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Timbre User Manual — Complete Workflow Guide</title>
+<meta content="Detailed step-by-step operating manual for Timbre, with exact UI screenshots and control references." name="description"/>
+
+
+
+
+<link rel="stylesheet" href="manual.css"/></head>
+<body>
+<div class="shell">
+<aside class="side">
+<div class="brand"><div><b>Timbre</b><span>Operating Manual · current build</span></div><a class="back-site" href="index.html">← Timbre website</a></div>
+<div class="navgroup">Start</div>
+<a href="#overview">Overview</a><a href="#first-run">First run</a><a href="#projects">Projects</a>
+<div class="navgroup">Production</div>
+<a href="#brief">01 Brief</a><a href="#script">02 Script</a><a href="#voice">03 Voice</a><a href="#visuals">04 Visuals</a><a href="#edit">05 Edit</a><a href="#master">06 Master</a><a href="#shorts">07 Shorts</a><a href="#deliver">08 Deliver</a>
+<div class="navgroup">Libraries &amp; reference</div>
+<a href="#models">Models</a><a href="#voices">Voices</a><a href="#controls">Controls &amp; shortcuts</a><a href="#workflow">End-to-end checklist</a>
+<div class="mini">Screenshots are direct crops of the application screenshots shipped in this Timbre build. Advanced control descriptions were checked against the current source files in the supplied ZIP.</div>
+</aside>
+<main class="main"><nav class="manual-sitebar" aria-label="Timbre website">
+  <a class="manual-sitebar-brand" href="index.html">Timbre</a>
+  <div><a href="index.html">Overview</a><span aria-hidden="true">/</span><strong>User Manual</strong></div>
+</nav>
+<header class="hero" id="overview">
+<div class="hero-shot"><img class="manual-source-full" src="img/00-masthead.webp" alt="Timbre masthead" width="1320" height="400"/></div>
+<p class="eyebrow">Timbre · Complete User Manual</p>
+<h1>From a blank project to a mastered, delivered piece.</h1>
+<p class="lede">This manual follows Timbre in the order the application is designed to be used. Every major screen is shown with focused crops of the exact interface, followed by the operating sequence, the purpose of each control group, and the points where a wrong setting propagates into later stages.</p>
+<div class="quick"><div><b>8</b><span>production stages</span></div><div><b>25</b><span>focused UI captures</span></div><div><b>1→8</b><span>Cmd/Ctrl stage navigation</span></div><div><b>Local</b><span>engine, models and project files</span></div></div>
+</header>
+<div class="content">
+<section class="manual" id="first-run">
+<p class="eyebrow">Before production</p><h2>First run: get the engine into a usable state</h2>
+<p class="intro">Timbre separates the application from the speech runtime and model weights. A fresh installation therefore needs a runtime first, then at least one speech model. Once the engine is running, the status block remains visible at the lower-left of the application.</p>
+<figure class="shot"><button aria-label="Open screenshot: Global navigation. Projects and Produce are the work areas; Studio, Models, Voices and Engine are the libraries and runtime surfaces." class="zoomable" data-src="img/01-projects.webp" type="button"><span class="crop-shell" style="width:116px;height:620px"><span class="crop-stage" style="width:160px;height:855px;transform:scale(0.725146)"><img class="crop-source" src="img/01-projects.webp" alt="Global navigation. Projects and Produce are the work areas; Studio, Models, Voices and Engine are the libraries and runtime surfaces." loading="lazy" style="width:1300px;height:900px;left:-0px;top:-45px"/></span></span></button><figcaption>Global navigation. Projects and Produce are the work areas; Studio, Models, Voices and Engine are the libraries and runtime surfaces.<span>Click image to enlarge</span></figcaption></figure>
+<figure class="shot"><button aria-label="Open screenshot: Engine status block at the bottom-left. A green indicator means the selected backend is running; Stop Engine terminates the managed process." class="zoomable" data-src="img/01-projects.webp" type="button"><span class="crop-shell" style="width:141px;height:150px"><span class="crop-stage" style="width:160px;height:170px;transform:scale(0.880000)"><img class="crop-source" src="img/01-projects.webp" alt="Engine status block at the bottom-left. A green indicator means the selected backend is running; Stop Engine terminates the managed process." loading="lazy" style="width:1300px;height:900px;left:-0px;top:-730px"/></span></span></button><figcaption>Engine status block at the bottom-left. A green indicator means the selected backend is running; Stop Engine terminates the managed process.<span>Click image to enlarge</span></figcaption></figure>
+<div class="steps">
+<div class="step"><div><b>Open Engine.</b><p>Choose <strong>Engine</strong> from the left rail. Timbre inspects the machine and recommends the runtime build for the available GPU/backend.</p></div></div>
+<div class="step"><div><b>Install the recommended runtime.</b><p>Use the recommended install button. During installation the row displays download/extraction progress. When complete, Timbre stores the runtime in its own application-data directory.</p></div></div>
+<div class="step"><div><b>Open Models and install one speech model.</b><p>Choose a model that fits the available memory. The Studio/Voice controls only expose capabilities actually supported by the selected model.</p></div></div>
+<div class="step"><div><b>Confirm the lower-left status reads Running.</b><p>If the engine is stopped, start it before generating narration. <strong>Stop Engine</strong> is useful when freeing GPU memory for another application.</p></div></div>
+</div>
+<div class="note"><b>macOS/Windows shortcut convention.</b> Timbre treats Control and Command as the same modifier for the editor and stage navigation. This manual writes <kbd>Cmd/Ctrl</kbd> where either is accepted.</div>
+</section>
+<section class="manual" id="projects">
+<p class="eyebrow">Library</p><h2>Projects: create, import, resume and search</h2>
+<figure class="shot"><button aria-label="Open screenshot: Project library header. Search and format filtering are on the left; Import Project File and New Project are on the right." class="zoomable" data-src="img/01-projects.webp" type="button"><span class="crop-shell" style="width:780px;height:83px"><span class="crop-stage" style="width:1125px;height:120px;transform:scale(0.693333)"><img class="crop-source" src="img/01-projects.webp" alt="Project library header. Search and format filtering are on the left; Import Project File and New Project are on the right." loading="lazy" style="width:1300px;height:900px;left:-165px;top:-85px"/></span></span></button><figcaption>Project library header. Search and format filtering are on the left; Import Project File and New Project are on the right.<span>Click image to enlarge</span></figcaption></figure>
+<figure class="shot"><button aria-label="Open screenshot: A project card. The format badge, project title, runtime metadata, stage-state dots and Continue button let you resume without opening the project blindly." class="zoomable" data-src="img/01-projects.webp" type="button"><span class="crop-shell" style="width:352px;height:321px"><span class="crop-stage" style="width:400px;height:365px;transform:scale(0.880000)"><img class="crop-source" src="img/01-projects.webp" alt="A project card. The format badge, project title, runtime metadata, stage-state dots and Continue button let you resume without opening the project blindly." loading="lazy" style="width:1300px;height:900px;left:-165px;top:-195px"/></span></span></button><figcaption>A project card. The format badge, project title, runtime metadata, stage-state dots and Continue button let you resume without opening the project blindly.<span>Click image to enlarge</span></figcaption></figure>
+<div class="steps">
+<div class="step"><div><b>Create a new project.</b><p>Click <strong>+ New Project</strong>. Set the project identity and format, then continue into Brief. The project receives its own folder and is autosaved with rolling snapshots.</p></div></div>
+<div class="step"><div><b>Resume an existing project.</b><p>Click <strong>Continue</strong> on a card. Timbre restores the project and opens the production pipeline.</p></div></div>
+<div class="step"><div><b>Bring in another Timbre project.</b><p>Use <strong>Import Project File…</strong>. This is for a project document/package, not ordinary video or audio media; media belongs in the Edit stage.</p></div></div>
+<div class="step"><div><b>Filter a larger library.</b><p>Use <strong>Search projects…</strong> for the project name and <strong>All formats</strong> to narrow the library to the intended output type.</p></div></div>
+</div>
+</section>
+<section class="manual" id="brief">
+<p class="eyebrow">01 · Brief</p><h2>Define the production constraints before writing</h2>
+<figure class="shot"><button aria-label="Open screenshot: The eight-stage production strip. You may click any stage directly; Cmd/Ctrl + 1…8 jumps to the same stages from the keyboard." class="zoomable" data-src="img/02-brief.webp" type="button"><span class="crop-shell" style="width:780px;height:40px"><span class="crop-stage" style="width:1210px;height:62px;transform:scale(0.644628)"><img class="crop-source" src="img/02-brief.webp" alt="The eight-stage production strip. You may click any stage directly; Cmd/Ctrl + 1…8 jumps to the same stages from the keyboard." loading="lazy" style="width:1366px;height:900px;left:-150px;top:-50px"/></span></span></button><figcaption>The eight-stage production strip. You may click any stage directly; Cmd/Ctrl + 1…8 jumps to the same stages from the keyboard.<span>Click image to enlarge</span></figcaption></figure>
+<figure class="shot"><button aria-label="Open screenshot: Brief — What it is. Format, duration, objective, audience, delivery date, reading speed, language and on-camera status are established here." class="zoomable" data-src="img/02-brief.webp" type="button"><span class="crop-shell" style="width:761px;height:427px"><span class="crop-stage" style="width:865px;height:485px;transform:scale(0.880000)"><img class="crop-source" src="img/02-brief.webp" alt="Brief — What it is. Format, duration, objective, audience, delivery date, reading speed, language and on-camera status are established here." loading="lazy" style="width:1366px;height:900px;left:-160px;top:-185px"/></span></span></button><figcaption>Brief — What it is. Format, duration, objective, audience, delivery date, reading speed, language and on-camera status are established here.<span>Click image to enlarge</span></figcaption></figure>
+<figure class="shot"><button aria-label="Open screenshot: Brief — Where and how it lands. Platform and tone choices set downstream delivery assumptions and narrative direction." class="zoomable" data-src="img/02-brief.webp" type="button"><span class="crop-shell" style="width:766px;height:211px"><span class="crop-stage" style="width:870px;height:240px;transform:scale(0.880000)"><img class="crop-source" src="img/02-brief.webp" alt="Brief — Where and how it lands. Platform and tone choices set downstream delivery assumptions and narrative direction." loading="lazy" style="width:1366px;height:900px;left:-160px;top:-660px"/></span></span></button><figcaption>Brief — Where and how it lands. Platform and tone choices set downstream delivery assumptions and narrative direction.<span>Click image to enlarge</span></figcaption></figure>
+<figure class="shot"><button aria-label="Open screenshot: Brief summary. Timbre derives canvas, frame rate, approximate word count, premise length, pacing, shot cadence, mastering profile and loudness target from the brief." class="zoomable" data-src="img/02-brief.webp" type="button"><span class="crop-shell" style="width:277px;height:279px"><span class="crop-stage" style="width:315px;height:317px;transform:scale(0.880000)"><img class="crop-source" src="img/02-brief.webp" alt="Brief summary. Timbre derives canvas, frame rate, approximate word count, premise length, pacing, shot cadence, mastering profile and loudness target from the brief." loading="lazy" style="width:1366px;height:900px;left:-1020px;top:-188px"/></span></span></button><figcaption>Brief summary. Timbre derives canvas, frame rate, approximate word count, premise length, pacing, shot cadence, mastering profile and loudness target from the brief.<span>Click image to enlarge</span></figcaption></figure>
+<div class="steps">
+<div class="step"><div><b>Choose Format and Duration first.</b><p>These two fields define the target canvas/runtime envelope. A one-minute YouTube video, for example, gives the Script stage a finite word budget rather than an open-ended page.</p></div></div>
+<div class="step"><div><b>Write the Objective as an outcome.</b><p>State what the audience should understand, feel or do by the end. Avoid a topic label such as “AI”; write the intended result, such as “Understand why local inference changes privacy and cost.”</p></div></div>
+<div class="step"><div><b>Define the Audience.</b><p>Record who the piece is for and what they already know. The Script stage uses this context when evaluating opening clarity, premise density and explanatory burden.</p></div></div>
+<div class="step"><div><b>Set language and actual reading speed.</b><p>Reading speed is measured from generated/recorded takes when available. The script duration estimate uses this measured value rather than a fixed generic WPM.</p></div></div>
+<div class="step"><div><b>Select every distribution platform that matters.</b><p>The platform choice affects delivery loudness, format and export expectations. Do this here rather than compensating manually at the end.</p></div></div>
+<div class="step"><div><b>Select tone deliberately, then inspect “This brief sets”.</b><p>The summary panel is the sanity check. If canvas, pacing, shot cadence or loudness are wrong, correct the brief now before generating script, voice and edits.</p></div></div>
+<div class="step"><div><b>Click Next: Script.</b><p>This advances to stage 02 while preserving every brief-derived constraint.</p></div></div>
+</div>
+</section>
+<section class="manual" id="script">
+<p class="eyebrow">02 · Script</p><h2>Build the narration as timed sections, not one text block</h2>
+<figure class="shot"><button aria-label="Open screenshot: Script action bar: Architect opens structural planning; Import brings in text; Copy copies the script; Next: Voice advances to performance." class="zoomable" data-src="img/03-script.webp" type="button"><span class="crop-shell" style="width:414px;height:44px"><span class="crop-stage" style="width:470px;height:50px;transform:scale(0.880000)"><img class="crop-source" src="img/03-script.webp" alt="Script action bar: Architect opens structural planning; Import brings in text; Copy copies the script; Next: Voice advances to performance." loading="lazy" style="width:1320px;height:900px;left:-835px;top:-145px"/></span></span></button><figcaption>Script action bar: Architect opens structural planning; Import brings in text; Copy copies the script; Next: Voice advances to performance.<span>Click image to enlarge</span></figcaption></figure>
+<div class="two">
+<figure class="shot"><button aria-label="Open screenshot: Outline rail. Each section has a narrative role, title and current estimated duration." class="zoomable" data-src="img/03-script.webp" type="button"><span class="crop-shell" style="width:216px;height:480px"><span class="crop-stage" style="width:245px;height:545px;transform:scale(0.880000)"><img class="crop-source" src="img/03-script.webp" alt="Outline rail. Each section has a narrative role, title and current estimated duration." loading="lazy" style="width:1320px;height:900px;left:-70px;top:-190px"/></span></span></button><figcaption>Outline rail. Each section has a narrative role, title and current estimated duration.<span>Click image to enlarge</span></figcaption></figure>
+<figure class="shot"><button aria-label="Open screenshot: Live analysis rail. Duration, reading speed, complexity, opening checks, source/claim counts and issues to review are shown continuously." class="zoomable" data-src="img/03-script.webp" type="button"><span class="crop-shell" style="width:286px;height:620px"><span class="crop-stage" style="width:330px;height:715px;transform:scale(0.867133)"><img class="crop-source" src="img/03-script.webp" alt="Live analysis rail. Duration, reading speed, complexity, opening checks, source/claim counts and issues to review are shown continuously." loading="lazy" style="width:1320px;height:900px;left:-970px;top:-185px"/></span></span></button><figcaption>Live analysis rail. Duration, reading speed, complexity, opening checks, source/claim counts and issues to review are shown continuously.<span>Click image to enlarge</span></figcaption></figure>
+</div>
+<figure class="shot"><button aria-label="Open screenshot: Section editor. Each card has a section type, title, duration and editable prose; highlighted passages identify issues requiring review." class="zoomable" data-src="img/03-script.webp" type="button"><span class="crop-shell" style="width:594px;height:484px"><span class="crop-stage" style="width:675px;height:550px;transform:scale(0.880000)"><img class="crop-source" src="img/03-script.webp" alt="Section editor. Each card has a section type, title, duration and editable prose; highlighted passages identify issues requiring review." loading="lazy" style="width:1320px;height:900px;left:-305px;top:-190px"/></span></span></button><figcaption>Section editor. Each card has a section type, title, duration and editable prose; highlighted passages identify issues requiring review.<span>Click image to enlarge</span></figcaption></figure>
+<div class="steps">
+<div class="step"><div><b>Choose or create the narrative structure.</b><p>Use <strong>Architect</strong> when you want a deliberate sequence of hook, setup, context, conflict, explanation, example, reveal, payoff and CTA rather than manually creating sections.</p></div></div>
+<div class="step"><div><b>Write one idea per section.</b><p>Use the section title as a compact statement of intent. This keeps voice direction, visuals and later edits aligned to the same semantic unit.</p></div></div>
+<div class="step"><div><b>Watch estimated duration while you write.</b><p>The large right-hand duration is calculated from words and measured reading speed. Treat an overrun as a structural problem: cut or combine ideas before generating narration.</p></div></div>
+<div class="step"><div><b>Resolve highlighted checks.</b><p>Warnings can include overly long first sentences, weak opening patterns, unsupported factual claims, generic premises and complexity. They are review signals, not automatic rewrites.</p></div></div>
+<div class="step"><div><b>Use Import only for source text you intend to structure.</b><p>An imported wall of prose still benefits from sectioning. Split it before voice generation so pauses, performance direction and shot planning can follow the narrative architecture.</p></div></div>
+<div class="step"><div><b>Advance only when the runtime is plausible.</b><p>Click <strong>Next: Voice</strong> when section durations and the total estimate are within the intended brief.</p></div></div>
+</div>
+</section>
+<section class="manual" id="voice">
+<p class="eyebrow">03 · Voice</p><h2>Choose an identity, then direct the performance</h2>
+<div class="two"><figure class="shot"><button aria-label="Open screenshot: Voice Identity panel: identity, model, Design/Clone/Preset mode, reference voice, identity prompt, seed, number handling and inter-section gap." class="zoomable" data-src="img/04-voice.webp" type="button"><span class="crop-shell" style="width:471px;height:563px"><span class="crop-stage" style="width:535px;height:640px;transform:scale(0.880000)"><img class="crop-source" src="img/04-voice.webp" alt="Voice Identity panel: identity, model, Design/Clone/Preset mode, reference voice, identity prompt, seed, number handling and inter-section gap." loading="lazy" style="width:1366px;height:900px;left:-165px;top:-125px"/></span></span></button><figcaption>Voice Identity panel: identity, model, Design/Clone/Preset mode, reference voice, identity prompt, seed, number handling and inter-section gap.<span>Click image to enlarge</span></figcaption></figure><figure class="shot"><button aria-label="Open screenshot: Performance panel: Energy, Authority, Intimacy, Tension, Warmth and pacing are compiled into instructions for supported models." class="zoomable" data-src="img/04-voice.webp" type="button"><span class="crop-shell" style="width:561px;height:339px"><span class="crop-stage" style="width:638px;height:385px;transform:scale(0.880000)"><img class="crop-source" src="img/04-voice.webp" alt="Performance panel: Energy, Authority, Intimacy, Tension, Warmth and pacing are compiled into instructions for supported models." loading="lazy" style="width:1366px;height:900px;left:-700px;top:-125px"/></span></span></button><figcaption>Performance panel: Energy, Authority, Intimacy, Tension, Warmth and pacing are compiled into instructions for supported models.<span>Click image to enlarge</span></figcaption></figure></div>
+<figure class="shot"><button aria-label="Open screenshot: Generated voice waveform. Once synthesis completes, the resulting take is visible as audio rather than only a status message." class="zoomable" data-src="img/04-voice.webp" type="button"><span class="crop-shell" style="width:780px;height:93px"><span class="crop-stage" style="width:1175px;height:140px;transform:scale(0.663830)"><img class="crop-source" src="img/04-voice.webp" alt="Generated voice waveform. Once synthesis completes, the resulting take is visible as audio rather than only a status message." loading="lazy" style="width:1366px;height:900px;left:-165px;top:-760px"/></span></span></button><figcaption>Generated voice waveform. Once synthesis completes, the resulting take is visible as audio rather than only a status message.<span>Click image to enlarge</span></figcaption></figure>
+<div class="steps">
+<div class="step"><div><b>Select the voice identity scope.</b><p><strong>This project only</strong> keeps the configuration local to the project. Use <strong>Save as Identity</strong> when you want the same model/reference/direction available later.</p></div></div>
+<div class="step"><div><b>Select a Model.</b><p>Only installed speech models appear. The mode and generation controls change according to the model specification, so unsupported settings are not sent to the engine.</p></div></div>
+<div class="step"><div><b>Choose Design, Clone or Preset.</b><p><strong>Design</strong> builds a voice from a written description. <strong>Clone</strong> uses a saved reference voice. <strong>Preset</strong> selects voices bundled with models that provide them.</p></div></div>
+<div class="step"><div><b>For cloning, use a clean 5–15 second reference.</b><p>Use one speaker, low background noise and an exact transcript. A mismatched transcript harms identity/prosody conditioning because the engine must align the reference content.</p></div></div>
+<div class="step"><div><b>Direct the read with performance controls.</b><p>Energy, Authority, Intimacy, Tension and Warmth describe delivery rather than simple pitch shifts. Set pacing separately: Slow, Measured, Conversational, Brisk or Rapid.</p></div></div>
+<div class="step"><div><b>Set deterministic details.</b><p>A pinned seed helps reproduce takes. <strong>Write numbers out before speaking</strong> converts forms such as “1,094” into spoken words. <strong>Gap between sections</strong> controls the real silence inserted between section takes.</p></div></div>
+<div class="step"><div><b>Generate and audition before moving on.</b><p>Listen for pronunciation, breath placement, section joins and performance consistency. Fix the source text or pronunciation before compensating in the editor.</p></div></div>
+</div>
+<div class="warning"><b>Voice cloning:</b> use only recordings you have permission to use. The Voice Library retains descriptive/credit information so provenance can remain attached to the reference.</div>
+</section>
+<section class="manual" id="visuals">
+<p class="eyebrow">04 · Visuals</p><h2>Turn narration timing into a shot plan</h2>
+<figure class="shot"><button aria-label="Open screenshot: Visuals overview. Density controls how frequently shots change; Re-plan regenerates the proposal; Place on Timeline commits approved media decisions to the edit." class="zoomable" data-src="img/visuals-shots.webp" type="button"><span class="crop-shell" style="width:780px;height:129px"><span class="crop-stage" style="width:1213px;height:200px;transform:scale(0.643034)"><img class="crop-source" src="img/visuals-shots.webp" alt="Visuals overview. Density controls how frequently shots change; Re-plan regenerates the proposal; Place on Timeline commits approved media decisions to the edit." loading="lazy" style="width:1320px;height:900px;left:-75px;top:-105px"/></span></span></button><figcaption>Visuals overview. Density controls how frequently shots change; Re-plan regenerates the proposal; Place on Timeline commits approved media decisions to the edit.<span>Click image to enlarge</span></figcaption></figure>
+<figure class="shot"><button aria-label="Open screenshot: Individual shot card. Type, treatment, title/prompt, rationale, media source and Approve/Reject controls stay attached to the timed narration line." class="zoomable" data-src="img/visuals-shots.webp" type="button"><span class="crop-shell" style="width:780px;height:142px"><span class="crop-stage" style="width:1208px;height:220px;transform:scale(0.645695)"><img class="crop-source" src="img/visuals-shots.webp" alt="Individual shot card. Type, treatment, title/prompt, rationale, media source and Approve/Reject controls stay attached to the timed narration line." loading="lazy" style="width:1320px;height:900px;left:-82px;top:-350px"/></span></span></button><figcaption>Individual shot card. Type, treatment, title/prompt, rationale, media source and Approve/Reject controls stay attached to the timed narration line.<span>Click image to enlarge</span></figcaption></figure>
+<div class="steps">
+<div class="step"><div><b>Select Density.</b><p><strong>Sparse</strong> holds shots longer, <strong>Balanced</strong> increases coverage, and <strong>Dense</strong> creates faster visual turnover. The shot strip shows type and duration at a glance.</p></div></div>
+<div class="step"><div><b>Review each proposal, not only the strip.</b><p>Each card shows the spoken line, shot type, treatment, description/title and the reasoning behind the recommendation.</p></div></div>
+<div class="step"><div><b>Change the shot type when the idea needs another visual grammar.</b><p>Typical choices include Typography, Stock, Generated, Diagram and Hold. The purpose is semantic fit, not variety for its own sake.</p></div></div>
+<div class="step"><div><b>Attach media.</b><p>Use <strong>Link from the bin…</strong> for media already imported into the project or <strong>Import…</strong> for new material.</p></div></div>
+<div class="step"><div><b>Approve or Reject.</b><p>Approval indicates the shot is ready to be used. Rejected ideas can be hidden with <strong>Show rejected</strong> off while preserving the decision for later review.</p></div></div>
+<div class="step"><div><b>Place on Timeline.</b><p>Once the plan is credible, use <strong>Place on Timeline</strong> to move the selected/approved decisions into Edit with narration timing as the reference.</p></div></div>
+</div>
+</section>
+<section class="manual" id="edit">
+<p class="eyebrow">05 · Edit</p><h2>Assemble picture, narration, music and effects on the timeline</h2>
+<figure class="shot"><button aria-label="Open screenshot: Editor command and transport bars. Import, file actions, undo/redo, Stop/Play, timecode, Split, Duplicate, track actions, editing tools and Snap are available without opening menus." class="zoomable" data-src="img/05-edit.webp" type="button"><span class="crop-shell" style="width:780px;height:68px"><span class="crop-stage" style="width:1205px;height:105px;transform:scale(0.647303)"><img class="crop-source" src="img/05-edit.webp" alt="Editor command and transport bars. Import, file actions, undo/redo, Stop/Play, timecode, Split, Duplicate, track actions, editing tools and Snap are available without opening menus." loading="lazy" style="width:1366px;height:900px;left:-150px;top:-100px"/></span></span></button><figcaption>Editor command and transport bars. Import, file actions, undo/redo, Stop/Play, timecode, Split, Duplicate, track actions, editing tools and Snap are available without opening menus.<span>Click image to enlarge</span></figcaption></figure>
+<figure class="shot"><button aria-label="Open screenshot: Editor workspace: Media/Narration/Sound bin at left, Program Monitor in the center, and Inspector/Mixer/Export at right." class="zoomable" data-src="img/05-edit.webp" type="button"><span class="crop-shell" style="width:780px;height:252px"><span class="crop-stage" style="width:1205px;height:390px;transform:scale(0.647303)"><img class="crop-source" src="img/05-edit.webp" alt="Editor workspace: Media/Narration/Sound bin at left, Program Monitor in the center, and Inspector/Mixer/Export at right." loading="lazy" style="width:1366px;height:900px;left:-150px;top:-195px"/></span></span></button><figcaption>Editor workspace: Media/Narration/Sound bin at left, Program Monitor in the center, and Inspector/Mixer/Export at right.<span>Click image to enlarge</span></figcaption></figure>
+<figure class="shot"><button aria-label="Open screenshot: Multi-track timeline. Video composites bottom-up; narration/audio tracks show waveforms; per-track controls sit at the left of each track." class="zoomable" data-src="img/05-edit.webp" type="button"><span class="crop-shell" style="width:780px;height:188px"><span class="crop-stage" style="width:1205px;height:290px;transform:scale(0.647303)"><img class="crop-source" src="img/05-edit.webp" alt="Multi-track timeline. Video composites bottom-up; narration/audio tracks show waveforms; per-track controls sit at the left of each track." loading="lazy" style="width:1366px;height:900px;left:-150px;top:-575px"/></span></span></button><figcaption>Multi-track timeline. Video composites bottom-up; narration/audio tracks show waveforms; per-track controls sit at the left of each track.<span>Click image to enlarge</span></figcaption></figure>
+<div class="steps">
+<div class="step"><div><b>Import media.</b><p>Click <strong>Import</strong> or drag video, audio or stills into the application. Media appears in the bin and can be placed on the timeline.</p></div></div>
+<div class="step"><div><b>Use the bin tabs by role.</b><p><strong>Media</strong> holds imported assets, <strong>Narration</strong> exposes generated speech, and <strong>Sound</strong> is for generated/imported sound material.</p></div></div>
+<div class="step"><div><b>Arrange clips directly.</b><p>Drag to move. Drag an edge to trim. Drag vertically to another compatible track. Snapping aligns clip edges and the playhead when <strong>Snap</strong> is enabled.</p></div></div>
+<div class="step"><div><b>Use the correct edit tool.</b><p>Select, Razor, Slip, Slide, Roll and Volume automation are distinct operations. Tool hotkeys are listed in the reference section below.</p></div></div>
+<div class="step"><div><b>Inspect the selected clip.</b><p>The <strong>Inspector</strong> controls fit/fill, crop, transform, opacity, colour parameters, fades, transitions, speed, reverse and clip gain. Make per-clip visual changes here rather than destructively modifying the source file.</p></div></div>
+<div class="step"><div><b>Mix by track role.</b><p>The <strong>Mixer</strong> exposes polarity, high-pass, gate, EQ, compression, pan, fader, metering and master controls. Narration can side-chain/duck a music bed automatically.</p></div></div>
+<div class="step"><div><b>Use range and edit-point navigation for precision.</b><p>Mark In/Out, shuttle with J/K/L, move between edits with Arrow Up/Down and use frame-step or nudge commands when mouse dragging is too coarse.</p></div></div>
+<div class="step"><div><b>Preview, then proceed to Master.</b><p>What you hear in the editor is built from the same project signal-chain definitions used by offline rendering; use the Master stage for delivery-level measurement and final processing.</p></div></div>
+</div>
+<h3>Track controls at a glance</h3>
+<div class="controls"><div class="control"><b>M — Mute</b><span>Silences the track without deleting clips.</span></div><div class="control"><b>S — Solo</b><span>Auditions the track against muted peers.</span></div><div class="control"><b>Visibility</b><span>Toggles video-track compositing visibility where applicable.</span></div><div class="control"><b>Lock</b><span>Prevents accidental track/clip manipulation.</span></div><div class="control"><b>Overflow</b><span>Move track in the stack, duplicate the strip to an empty track, or remove the track.</span></div><div class="control"><b>Role</b><span>Narration, music and effects roles inform ducking and mastering logic.</span></div></div>
+</section>
+<section class="manual" id="master">
+<p class="eyebrow">06 · Master</p><h2>Measure against a delivery target, then finish the signal path</h2>
+<figure class="shot"><button aria-label="Open screenshot: Master measurement area. Master applies the profile and measures; Measure Only evaluates without committing the master operation. The central readout is integrated loudness (LUFS)." class="zoomable" data-src="img/06-master.webp" type="button"><span class="crop-shell" style="width:780px;height:283px"><span class="crop-stage" style="width:1115px;height:405px;transform:scale(0.699552)"><img class="crop-source" src="img/06-master.webp" alt="Master measurement area. Master applies the profile and measures; Measure Only evaluates without committing the master operation. The central readout is integrated loudness (LUFS)." loading="lazy" style="width:1320px;height:900px;left:-165px;top:-120px"/></span></span></button><figcaption>Master measurement area. Master applies the profile and measures; Measure Only evaluates without committing the master operation. The central readout is integrated loudness (LUFS).<span>Click image to enlarge</span></figcaption></figure>
+<figure class="shot"><button aria-label="Open screenshot: Master profiles. Choose the programme intent, inspect its loudness/true-peak/range/voice-to-bed targets, and review the derived signal path below." class="zoomable" data-src="img/06-master.webp" type="button"><span class="crop-shell" style="width:780px;height:215px"><span class="crop-stage" style="width:1105px;height:305px;transform:scale(0.705882)"><img class="crop-source" src="img/06-master.webp" alt="Master profiles. Choose the programme intent, inspect its loudness/true-peak/range/voice-to-bed targets, and review the derived signal path below." loading="lazy" style="width:1320px;height:900px;left:-170px;top:-515px"/></span></span></button><figcaption>Master profiles. Choose the programme intent, inspect its loudness/true-peak/range/voice-to-bed targets, and review the derived signal path below.<span>Click image to enlarge</span></figcaption></figure>
+<div class="steps">
+<div class="step"><div><b>Select the mastering profile by programme type.</b><p>Documentary, Podcast, Advertisement, TikTok/Reels, Broadcast, Educational Lecture and Cinematic alter the intended programme behaviour. Delivery platform loudness remains a separate target established by the brief.</p></div></div>
+<div class="step"><div><b>Click Measure Only when you want diagnosis first.</b><p>Timbre evaluates integrated loudness, true peak, loudness range and voice/bed relationship without asking you to commit the master operation.</p></div></div>
+<div class="step"><div><b>Read the large LUFS number against the target rail.</b><p>The main display answers the basic delivery question directly: how far the measured mix is from the target. Do not judge only by peak level; integrated loudness and true peak solve different problems.</p></div></div>
+<div class="step"><div><b>Inspect True Peak, Range and Voice/Bed.</b><p><strong>True Peak</strong> protects encoding headroom, <strong>Range</strong> describes programme dynamics, and <strong>Voice/Bed</strong> checks whether narration remains sufficiently above the supporting bed.</p></div></div>
+<div class="step"><div><b>Click Master when the profile is correct.</b><p>The application uses measured project data to propose/apply the required gain and track moves rather than relying on a fixed “make louder” preset.</p></div></div>
+</div>
+<h3>Advanced Insert FX rack</h3>
+<p>The current build also contains a pre-master insert rack. It sits before Timbre’s final loudness/limiter stage, so creative or corrective processing can be auditioned while final delivery compliance remains downstream.</p>
+<div aria-label="Control map of the current Timbre Insert FX rack" class="rack">
+<div class="rackrail"><div><span>INSERT FX</span><b>ANALOG PROCESSING RACK</b></div><div class="rackpower">IN / OUT</div></div>
+<div class="rackcmd">
+<div class="rackmodule"><small>RUNTIME</small><strong>DSP READY · 03/03</strong><div class="rackbuttons"><span>Preset / Custom chain</span><span>Install Engine</span></div></div>
+<div class="rackmodule"><small>MASTER MONITOR</small><strong>POST INSERT · LIVE</strong><div class="rackbuttons"><span>PLAY</span><span>REFRESH / ARM</span><span class="accent">AUTO ADAPT</span><span>UNDO</span></div><div class="meters"><span><i>I</i><b>LUFS</b></span><span><i>TP</i><b>dBTP</b></span><span><i>LRA</i><b>LU</b></span><span><i>S MAX</i><b>LUFS</b></span><span><i>M MAX</i><b>LUFS</b></span></div></div>
+<div class="rackmodule"><small>PROGRAM / ADD</small><strong>PROGRAM BANK</strong><div class="rackbuttons"><span>01…05</span><span>Add processor</span><span>VST3 / AU</span></div></div>
+</div>
+<div class="rackunits"><div class="unit"><div class="unithead"><span>01 · EQ</span><span>ON</span></div><div class="screen"></div><div class="knobs"><div class="knob">FREQ</div><div class="knob">GAIN</div><div class="knob">Q</div><div class="knob">MIX</div></div></div><div class="unit"><div class="unithead"><span>02 · COMP</span><span>ON</span></div><div class="screen"></div><div class="knobs"><div class="knob">THRESH</div><div class="knob">RATIO</div><div class="knob">ATTACK</div><div class="knob">MIX</div></div></div><div class="unit"><div class="unithead"><span>03 · LIMIT</span><span>ON</span></div><div class="screen"></div><div class="knobs"><div class="knob">CEILING</div><div class="knob">RELEASE</div><div class="knob">DRIVE</div><div class="knob">MIX</div></div></div></div>
+</div>
+<p class="eyebrow">Control map — generated from the current rack structure and labels; the two screenshots above are direct app captures.</p>
+<div class="two">
+<div class="card"><h4>Rack header and runtime</h4><p><strong>IN/OUT</strong> engages or bypasses the whole insert. Runtime state reads <strong>DSP READY</strong>, <strong>PREPARING</strong> or <strong>DSP OFFLINE</strong>. If not installed, <strong>Install engine</strong> prepares the local processing runtime.</p></div>
+<div class="card"><h4>Master Monitor</h4><p><strong>ARM</strong> prints a 12-second audition loop; after a result exists the same button becomes <strong>REFRESH</strong>. <strong>PLAY</strong> auditions it. Readouts include I, TP, LRA, S MAX and M MAX.</p></div>
+<div class="card"><h4>Auto Adapt</h4><p><strong>AUTO ADAPT</strong> analyzes programme metrics and applies a measured insert configuration. <strong>UNDO</strong> restores the previous chain after an adaptive pass.</p></div>
+<div class="card"><h4>Processors and plug-ins</h4><p>Choose a built-in processor from the add selector or use <strong>VST3 / AU</strong> for an external processor. Each unit has bypass, live response display, live metrics, effect parameters, a MIX control, move-earlier/move-later buttons and Remove.</p></div>
+</div>
+<div class="note"><b>Signal-order rule:</b> the rack is explicitly labelled “Pre-master insert · Timbre final loudness + limiter remain last.” Use insert processing for tone/dynamics; let the final master stage preserve the delivery target.</div>
+</section>
+<section class="manual" id="shorts">
+<p class="eyebrow">07 · Shorts</p><h2>Find vertical clips from the finished long-form piece</h2>
+<p class="intro">Shorts works from word-timed source material. It can use the current project timeline or another source video, transcribe locally, rank candidate segments, reframe them to 9:16, and burn captions using the same final rendering path used for export.</p>
+<figure class="shot"><button aria-label="Open screenshot: Use the 07 Shorts tab in the production strip. Cmd/Ctrl + 7 jumps here from elsewhere in the pipeline." class="zoomable" data-src="img/02-brief.webp" type="button"><span class="crop-shell" style="width:780px;height:40px"><span class="crop-stage" style="width:1210px;height:62px;transform:scale(0.644628)"><img class="crop-source" src="img/02-brief.webp" alt="Use the 07 Shorts tab in the production strip. Cmd/Ctrl + 7 jumps here from elsewhere in the pipeline." loading="lazy" style="width:1366px;height:900px;left:-150px;top:-50px"/></span></span></button><figcaption>Use the 07 Shorts tab in the production strip. Cmd/Ctrl + 7 jumps here from elsewhere in the pipeline.<span>Click image to enlarge</span></figcaption></figure>
+<div class="steps">
+<div class="step"><div><b>Choose the long-form source.</b><p>Use <strong>Choose the video…</strong> for an external finished file or <strong>Use this project’s timeline</strong> to cut directly from the edit you have built in Timbre.</p></div></div>
+<div class="step"><div><b>Create word timings.</b><p>Click <strong>Transcribe</strong> when a local transcription model is installed, or <strong>Import captions…</strong> if timings already exist. Word-accurate timing allows caption boundaries to follow speech rather than rough sentence blocks.</p></div></div>
+<div class="step"><div><b>Set the search window.</b><p>Choose how many candidates to find, minimum duration, maximum duration and the target duration. These settings constrain the search without rewriting the source.</p></div></div>
+<div class="step"><div><b>Click Find clips.</b><p>Candidates are scored using opening strength, ability to stand alone, story arc, ending, clean edges, pace, length and style fit.</p></div></div>
+<div class="step"><div><b>Review each candidate.</b><p>Use <strong>Keep</strong> or <strong>Reject</strong>. The card shows why the clip was selected, its opening and closing lines, and a 9:16 crop preview when source video is available.</p></div></div>
+<div class="step"><div><b>Correct trim and caption timing where required.</b><p><strong>Trim…</strong> changes in/out points. <strong>Text timing…</strong> exposes global offset, timing stretch, individual title-frame In/Out controls, ±0.10 second nudges, playhead assignment and an exact rendered caption preview.</p></div></div>
+<div class="step"><div><b>Render one or render the kept set.</b><p><strong>Render this one</strong> is useful for a test. <strong>Render N vertical</strong> renders all kept candidates. Final shorts are 1080×1920 at 30 fps in the current caption-render path.</p></div></div>
+<div class="step"><div><b>Click Next: deliver.</b><p>Move to the packaging/export stage only after the short list and caption timing are accepted.</p></div></div>
+</div>
+</section>
+<section class="manual" id="deliver">
+<p class="eyebrow">08 · Deliver</p><h2>Export the video and the project package</h2>
+<p class="intro">Deliver is the final quality gate. It compares the finished project against the brief, lets you fix a failed check by jumping back to the relevant stage, then writes the requested outputs locally.</p>
+<figure class="shot"><button aria-label="Open screenshot: The project remains a local, resumable document after delivery; exported media and packages do not replace the project itself." class="zoomable" data-src="img/01-projects.webp" type="button"><span class="crop-shell" style="width:780px;height:83px"><span class="crop-stage" style="width:1125px;height:120px;transform:scale(0.693333)"><img class="crop-source" src="img/01-projects.webp" alt="The project remains a local, resumable document after delivery; exported media and packages do not replace the project itself." loading="lazy" style="width:1300px;height:900px;left:-165px;top:-85px"/></span></span></button><figcaption>The project remains a local, resumable document after delivery; exported media and packages do not replace the project itself.<span>Click image to enlarge</span></figcaption></figure>
+<div class="steps">
+<div class="step"><div><b>Read “Against the brief”.</b><p>The checklist reports how many delivery conditions are clear. Where a failed/close check maps to an earlier stage, use <strong>Fix</strong> to jump directly to the relevant production page.</p></div></div>
+<div class="step"><div><b>Choose Video preset and Encoder.</b><p>The video preset controls the output target; encoder selection chooses the available render backend. The mix is measured before encoding, so one exact gain can be applied to the master target rather than a moving estimate.</p></div></div>
+<div class="step"><div><b>Click Export video.</b><p>This renders the finished timeline with its picture edits, audio mix and delivery loudness. Use Stop if you need to cancel an active job.</p></div></div>
+<div class="step"><div><b>Select package contents.</b><p>The Package panel lets you choose additional deliverables/interchange items. Group-level <strong>All/None</strong> controls speed up selection.</p></div></div>
+<div class="step"><div><b>Click Export package.</b><p>Selected items are written to one folder adjacent to the project name. The interface also explains what a chosen interchange format cannot carry so you do not assume an external editor will reproduce unsupported state.</p></div></div>
+<div class="step"><div><b>Use Reveal after export.</b><p>Reveal opens the file/folder location in the operating system. Timbre does not upload delivery files automatically.</p></div></div>
+</div>
+</section>
+<section class="manual" id="models">
+<p class="eyebrow">Library · Models</p><h2>Install models that match the job and the machine</h2>
+<figure class="shot"><button aria-label="Open screenshot: Model catalogue. Cards expose family/tier, approximate size, model capability summary, license/metadata and install controls before download." class="zoomable" data-src="img/07-models.webp" type="button"><span class="crop-shell" style="width:780px;height:523px"><span class="crop-stage" style="width:1215px;height:815px;transform:scale(0.641975)"><img class="crop-source" src="img/07-models.webp" alt="Model catalogue. Cards expose family/tier, approximate size, model capability summary, license/metadata and install controls before download." loading="lazy" style="width:1366px;height:900px;left:-145px;top:-85px"/></span></span></button><figcaption>Model catalogue. Cards expose family/tier, approximate size, model capability summary, license/metadata and install controls before download.<span>Click image to enlarge</span></figcaption></figure>
+<div class="steps">
+<div class="step"><div><b>Read the tier and size before installing.</b><p>Flagship models maximize quality but demand more GPU memory. Balanced and lighter models trade model size for faster/lower-memory operation.</p></div></div>
+<div class="step"><div><b>Match capability to the workflow.</b><p>Not every model supports Design, Clone and Preset. Multilingual, Indian-language, streaming, sound/music and transcription models serve different tasks.</p></div></div>
+<div class="step"><div><b>Install only what is needed.</b><p>Model packages can range from hundreds of megabytes to several gigabytes. Timbre keeps one speech model resident at a time to avoid stacking weights in VRAM.</p></div></div>
+<div class="step"><div><b>Check licensing for production use.</b><p>Model code and model weights can carry different licences. The catalogue surfaces model licensing information before download; commercial projects should use weights whose licence permits the intended use.</p></div></div>
+</div>
+</section>
+<section class="manual" id="voices">
+<p class="eyebrow">Library · Voices</p><h2>Build a reusable reference-voice library</h2>
+<figure class="shot"><button aria-label="Open screenshot: Voice Library. Add a Voice creates a reusable reference; each saved card keeps the reference identity, transcript/metadata and management actions." class="zoomable" data-src="img/08-voices.webp" type="button"><span class="crop-shell" style="width:780px;height:282px"><span class="crop-stage" style="width:1217px;height:440px;transform:scale(0.640920)"><img class="crop-source" src="img/08-voices.webp" alt="Voice Library. Add a Voice creates a reusable reference; each saved card keeps the reference identity, transcript/metadata and management actions." loading="lazy" style="width:1366px;height:900px;left:-145px;top:-80px"/></span></span></button><figcaption>Voice Library. Add a Voice creates a reusable reference; each saved card keeps the reference identity, transcript/metadata and management actions.<span>Click image to enlarge</span></figcaption></figure>
+<figure class="shot"><button aria-label="Open screenshot: The Voices library is a top-level destination, separate from the per-project Voice stage, so the same authorized reference can be reused across projects." class="zoomable" data-src="img/08-voices.webp" type="button"><span class="crop-shell" style="width:116px;height:620px"><span class="crop-stage" style="width:160px;height:855px;transform:scale(0.725146)"><img class="crop-source" src="img/08-voices.webp" alt="The Voices library is a top-level destination, separate from the per-project Voice stage, so the same authorized reference can be reused across projects." loading="lazy" style="width:1366px;height:900px;left:-0px;top:-45px"/></span></span></button><figcaption>The Voices library is a top-level destination, separate from the per-project Voice stage, so the same authorized reference can be reused across projects.<span>Click image to enlarge</span></figcaption></figure>
+<div class="steps">
+<div class="step"><div><b>Click Add a Voice.</b><p>Select the clean reference recording, then enter the exact transcript of what is spoken. Keep one speaker in the file.</p></div></div>
+<div class="step"><div><b>Record identity/provenance information.</b><p>Use a descriptive name and retain credit/permission context. A voice should remain identifiable after months of project work.</p></div></div>
+<div class="step"><div><b>Use the saved voice from stage 03.</b><p>In Voice, choose Clone and select the reference from the Reference voice menu. Clone-only models rely on this library instead of a Design prompt.</p></div></div>
+<div class="step"><div><b>Edit or delete deliberately.</b><p>Changing a reference can change future renders. Existing project media remains rendered audio, but regeneration may sound different after a reference is replaced.</p></div></div>
+</div>
+</section>
+<section class="manual" id="controls">
+<p class="eyebrow">Reference</p><h2>Knobs, transport and keyboard editing</h2>
+<h3>Rotary controls</h3>
+<div class="tablewrap"><table><thead><tr><th>Gesture</th><th>Behaviour</th><th>When to use it</th></tr></thead><tbody>
+<tr><td>Vertical drag</td><td>Full parameter range over an approximately 180 px throw.</td><td>Fast coarse adjustment.</td></tr>
+<tr><td>Shift + drag</td><td>Fine mode at roughly one fifth normal sensitivity.</td><td>Small EQ, dynamics or level corrections.</td></tr>
+<tr><td>Alt/Option + drag</td><td>Very fine mode at roughly one fiftieth normal sensitivity.</td><td>Tenths of a dB and critical threshold placement.</td></tr>
+<tr><td>Mouse wheel</td><td>One parameter step per detent.</td><td>Incremental adjustment without dragging.</td></tr>
+<tr><td>Double-click</td><td>Reset to default; bipolar controls return to centre.</td><td>Recover a known neutral state.</td></tr>
+<tr><td>Click value</td><td>Type an exact number.</td><td>Known target frequencies, dB values or ratios.</td></tr>
+<tr><td>Arrow keys</td><td>One step; Shift gives ten steps; Home/End go to limits.</td><td>Keyboard precision/accessibility.</td></tr>
+</tbody></table></div>
+<h3>Editor keyboard reference</h3>
+<div class="tablewrap"><table><thead><tr><th>Keys</th><th>Action</th></tr></thead><tbody>
+<tr><td><kbd>V</kbd> / <kbd>C</kbd> / <kbd>Y</kbd> / <kbd>U</kbd> / <kbd>N</kbd> / <kbd>A</kbd></td><td>Select / Razor / Slip / Slide / Roll / Volume automation tools.</td></tr>
+<tr><td><kbd>Space</kbd></td><td>Play or pause.</td></tr>
+<tr><td><kbd>J</kbd> <kbd>K</kbd> <kbd>L</kbd></td><td>Reverse / stop / forward shuttle. Repeated J or L increases shuttle rate; hold K and tap J/L to step a frame.</td></tr>
+<tr><td><kbd>S</kbd></td><td>Split at the playhead.</td></tr>
+<tr><td><kbd>Cmd/Ctrl</kbd> + <kbd>T</kbd></td><td>Add the default transition at the selected cut.</td></tr>
+<tr><td><kbd>I</kbd> / <kbd>O</kbd></td><td>Set In / Out. Shift+I or Shift+O jumps to the stored point.</td></tr>
+<tr><td><kbd>Alt/Option</kbd> + <kbd>X</kbd></td><td>Clear the In/Out range.</td></tr>
+<tr><td><kbd>;</kbd> / <kbd>'</kbd></td><td>Lift / Extract the marked range.</td></tr>
+<tr><td><kbd>M</kbd></td><td>Add marker. Shift+M goes to next marker; Cmd/Ctrl+M goes to previous marker.</td></tr>
+<tr><td><kbd>Shift</kbd> + <kbd>F</kbd></td><td>Create a frame hold at the playhead.</td></tr>
+<tr><td><kbd>↑</kbd> / <kbd>↓</kbd></td><td>Jump to previous / next edit point.</td></tr>
+<tr><td><kbd>Q</kbd> / <kbd>W</kbd> / <kbd>E</kbd></td><td>Trim head to playhead / trim tail to playhead / extend selected clip to playhead.</td></tr>
+<tr><td><kbd>,</kbd> / <kbd>.</kbd></td><td>Nudge selected clip one frame left/right; hold Shift for one second.</td></tr>
+<tr><td><kbd>Delete</kbd></td><td>Delete selected clip; Shift+Delete ripple-deletes and closes the following gap.</td></tr>
+<tr><td><kbd>Backspace</kbd></td><td>Close the gap before the selected clip.</td></tr>
+<tr><td><kbd>Cmd/Ctrl</kbd> + <kbd>L</kbd></td><td>Toggle loop; if a range exists, loop the In/Out range.</td></tr>
+<tr><td><kbd>Cmd/Ctrl</kbd> + <kbd>D</kbd></td><td>Duplicate selected clip.</td></tr>
+<tr><td><kbd>Cmd/Ctrl</kbd> + <kbd>Z</kbd></td><td>Undo; add Shift for redo.</td></tr>
+<tr><td><kbd>←</kbd> / <kbd>→</kbd></td><td>Move playhead one frame; Shift moves one second.</td></tr>
+<tr><td><kbd>Home</kbd> / <kbd>End</kbd></td><td>Jump to timeline start / end.</td></tr>
+<tr><td><kbd>F</kbd></td><td>Toggle Focus Mode in Edit.</td></tr>
+<tr><td><kbd>Cmd/Ctrl</kbd> + <kbd>1…8</kbd></td><td>Jump directly to Brief, Script, Voice, Visuals, Edit, Master, Shorts or Deliver.</td></tr>
+</tbody></table></div>
+</section>
+<section class="manual" id="workflow">
+<p class="eyebrow">End-to-end operating sequence</p><h2>A repeatable production checklist</h2>
+<div class="workflow"><div><b>01</b><span>Brief</span></div><div><b>02</b><span>Script</span></div><div><b>03</b><span>Voice</span></div><div><b>04</b><span>Visuals</span></div><div><b>05</b><span>Edit</span></div><div><b>06</b><span>Master</span></div><div><b>07</b><span>Shorts</span></div><div><b>08</b><span>Deliver</span></div></div>
+<div class="steps">
+<div class="step"><div><b>Brief locks the constraints.</b><p>Runtime, audience, platform, pacing and delivery targets should be credible before any expensive generation work.</p></div></div>
+<div class="step"><div><b>Script locks the semantic structure.</b><p>Get the opening, argument and word count right before creating performance takes.</p></div></div>
+<div class="step"><div><b>Voice locks timing and performance.</b><p>Regenerate mispronunciations or poorly directed lines here rather than attempting to repair them with timeline effects.</p></div></div>
+<div class="step"><div><b>Visuals turns timing into coverage.</b><p>Approve the visual logic and attach available media before bulk-placement on the timeline.</p></div></div>
+<div class="step"><div><b>Edit locks the programme.</b><p>Picture, narration, bed, SFX, fades, transitions and mix automation should be settled before mastering.</p></div></div>
+<div class="step"><div><b>Master verifies delivery, not taste alone.</b><p>Use LUFS, true peak, dynamic range and voice/bed measurements; use the insert rack for controlled tone/dynamics, keeping final loudness downstream.</p></div></div>
+<div class="step"><div><b>Shorts is derivative work.</b><p>Cut from the finished long piece so captions, crop decisions and clip scoring reference the final narrative.</p></div></div>
+<div class="step"><div><b>Deliver is the last gate.</b><p>Resolve failed checks, export video, export the package, and reveal the resulting local files.</p></div></div>
+</div>
+<div class="two"><div class="card"><h4>When something sounds wrong</h4><p>Fix the earliest stage that caused it. Wrong wording → Script. Wrong delivery → Voice. Wrong level balance → Edit/Mixer. Wrong delivery loudness → Master. Do not solve an upstream problem by stacking downstream processing.</p></div><div class="card"><h4>When something looks wrong</h4><p>Shot concept → Visuals. Timing/composition/crop → Edit Inspector and timeline. Platform framing/output size → Brief/Deliver preset. Keep conceptual, editorial and delivery decisions in their own stages.</p></div></div>
+</section>
+<footer class="product-footer" aria-label="About Timbre">
+  <div class="product-footer__rule"></div>
+  <div class="product-footer__grid">
+    <div class="product-footer__mark">
+      <p class="product-footer__eyebrow">About Timbre</p>
+      <h2>Timbre was created at Axiomatic Research Lab by Godson Johnson.</h2>
+    </div>
+    <div class="product-footer__copy">
+      <p>Timbre is an integrated creative-production environment designed to bring narrative development, voice generation, visual planning, editing, mixing, mastering, short-form adaptation, and final delivery into a single coherent workflow.</p>
+      <p>The project reflects Axiomatic Research Lab’s broader work in human–AI creative systems: tools in which artificial intelligence supports the creator’s judgement rather than replacing it. Timbre is therefore designed around direct control, measurable feedback, editable intermediate stages, and a production workflow that keeps the user responsible for the final creative and technical decisions.</p>
+      <p>This manual documents the interface and operating model of the supplied Timbre build, including its current project workflow, editor, mixer, mastering environment, processor rack, voice tools, visual planning system, Shorts workflow, and delivery controls.</p>
+    </div>
+  </div>
+  <div class="product-footer__meta">
+    <span>Designed and developed by <strong>Godson Johnson</strong></span>
+    <span>Axiomatic Research Lab</span>
+    <span>Timbre User Manual · 19 September 2026</span>
+  </div>
+  <p class="product-footer__note">This publication is self-contained. All interface figures are embedded directly in the document and can be opened at full resolution from their respective figure views.</p>
+</footer>
+</div>
+</main>
+</div>
+<div aria-label="Screenshot viewer" aria-modal="true" class="modal" id="modal" role="dialog"><button aria-label="Close" type="button">×</button><img alt="Expanded Timbre screenshot"/></div>
+<script>
+const modal=document.getElementById('modal'), big=modal.querySelector('img');
+document.querySelectorAll('.zoomable').forEach(b=>b.addEventListener('click',()=>{big.src=b.dataset.src; modal.classList.add('open')}));
+function closeModal(){modal.classList.remove('open');big.removeAttribute('src')}
+modal.querySelector('button').addEventListener('click',closeModal); modal.addEventListener('click',e=>{if(e.target===modal)closeModal()}); document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+</script>
+</body></html>
