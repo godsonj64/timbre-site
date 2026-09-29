@@ -6,397 +6,402 @@
     <title>Timbre — a voice studio that runs on your own machine</title>
     <meta
       name="description"
-      content="Write a script, give it a voice, cut the video and master it for the platform you are posting to. Timbre runs open-weight speech models on your own computer. No subscription, no cloud, no API keys."
+      content="Write a script, give it a voice, cut the video, master it and pull the Shorts. Timbre runs open-weight speech models on your own computer — no per-word billing, nothing uploaded."
     />
-    <meta name="theme-color" content="#0f1114" />
+    <meta name="theme-color" content="#0b0b0e" />
     <meta property="og:title" content="Timbre — a voice studio that runs on your own machine" />
     <meta
       property="og:description"
-      content="Script, voice, edit, master and deliver. Open-weight speech models running locally, with a real multi-track editor and broadcast-grade loudness."
+      content="Script, voice, edit, master, Shorts and delivery. Open-weight speech models running locally, a real multi-track editor and broadcast-grade loudness."
     />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="img/00-masthead.webp" />
     <!-- Versioned by the stylesheet's content, so a page never pairs new markup
          with a stylesheet a browser cached before the update. -->
-    <link rel="stylesheet" href="style.css?v=104f90d08c" />
+    <link rel="stylesheet" href="style.css?v=6b19c0bb29" />
   </head>
   <body>
-    <a class="skip" href="#what">Skip to content</a>
+    <a class="skip" href="#main">Skip to content</a>
 
-    <!-- ───────────────────────────────────────────── hero -->
-    <header class="hero">
-      <nav class="site-nav" aria-label="Primary">
-        <a class="site-nav-brand" href="index.html">Timbre</a>
-        <div class="site-nav-links">
-          <a href="#stages">Workflow</a>
-          <a href="manual.html">User Manual</a>
-          <a href="#get">Download</a>
-        </div>
-      </nav>
-      <div class="hero-copy">
-        <div class="hero-text">
-          <p class="eyebrow">Local voice studio <span class="eyebrow-tag">v1.4</span></p>
-          <h1>From script to finished video, without leaving your desk.</h1>
-          <p class="lede">
-            Write the script, give it a voice, cut the video, master it for each platform and pull
-            the Shorts &mdash; in one app. The speech models run on your own computer: no per&#8209;word
-            billing, and nothing is uploaded.
-          </p>
-          <div class="cta">
-            <a class="btn btn-primary" href="#get">Download Timbre</a>
-            <a class="btn" href="#stages">See how it works</a>
-          </div>
-          <p class="hero-meta">macOS on Apple Silicon or&nbsp;Intel &middot; Windows&nbsp;10&nbsp;and&nbsp;11</p>
-        </div>
-        <ul class="hero-facts" aria-label="At a glance">
-          <li><b>8</b> stages, from script to delivery</li>
-          <li><b>15</b> open-weight voice &amp; sound models</li>
-          <li><b>100%</b> on your own machine</li>
-        </ul>
+    <!-- The mark: a spoken line as five bars, in the logo's own pink-to-gold. -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="timbre-grad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#ff3371" />
+          <stop offset="0.55" stop-color="#ff6c10" />
+          <stop offset="1" stop-color="#ffae03" />
+        </linearGradient>
+        <symbol id="mark" viewBox="0 0 24 24">
+          <rect x="2" y="9" width="3" height="6" rx="1.5" fill="url(#timbre-grad)" />
+          <rect x="6.75" y="5" width="3" height="14" rx="1.5" fill="url(#timbre-grad)" />
+          <rect x="11.5" y="2" width="3" height="20" rx="1.5" fill="url(#timbre-grad)" />
+          <rect x="16.25" y="6.5" width="3" height="11" rx="1.5" fill="url(#timbre-grad)" />
+          <rect x="21" y="10" width="2.5" height="4" rx="1.25" fill="url(#timbre-grad)" />
+        </symbol>
+      </defs>
+    </svg>
+
+    <header class="nav" id="top">
+      <div class="container nav-inner">
+        <a class="brand" href="#top" aria-label="Timbre, back to top">
+          <svg class="brand-mark" aria-hidden="true"><use href="#mark" /></svg>
+          <span>Timbre</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#workflow">Workflow</a>
+          <a href="#voices">Voices</a>
+          <a href="#local">Why local</a>
+          <a href="manual.html">Manual</a>
+          <a class="pill pill-hot pill-sm" href="#download">Download</a>
+        </nav>
       </div>
-      <!-- The product itself, not a logo: the Edit stage, with the eight-stage
-           pipeline across its top. Framed as a display set into the chassis. -->
-      <figure class="hero-shot">
-        <img
-          src="img/05-edit.webp"
-          alt="Timbre&rsquo;s Edit stage: the eight production stages across the top, a program monitor, and a multi-track timeline with video, narration waveforms and markers."
-          width="1366"
-          height="900"
-          fetchpriority="high"
-        />
-      </figure>
     </header>
 
-    <!-- ───────────────────────────────────────────── what -->
-    <section id="what" class="band">
-      <div class="wrap narrow">
-        <h2>What Timbre actually is</h2>
-        <p class="big">
-          It is a studio for people who make things with a voice in them — explainers, documentaries,
-          podcasts, ads, shorts. One window takes you from a blank page to a finished, correctly
-          loud file.
-        </p>
-        <div class="grid three">
-          <div class="card">
-            <h3>It speaks</h3>
-            <p>
-              Type a line and hear it read back in a voice you designed in words, cloned from a short
-              recording, or picked from a model's own presets.
-            </p>
+    <main id="main">
+      <!-- ─────────────────────────────────────────────────────────── hero -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero-inner">
+          <a class="news" href="manual.html#shorts">
+            <span class="news-tag">New in 1.4</span>
+            <span>A studio pass for every Short — tighten, punch in, frame each shot</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <h1 id="hero-title">
+            <span class="h1-line">From script to finished video,</span>
+            <span class="h1-line hot-text">without leaving your desk.</span>
+          </h1>
+          <p class="hero-lede">
+            Write the script, give it a voice, cut the video, master it for each platform and pull the
+            Shorts — in one app. The speech models run on your own computer: no per&#8209;word billing,
+            and nothing is uploaded.
+          </p>
+          <div class="hero-cta">
+            <a
+              class="pill pill-hot"
+              id="heroDownload"
+              href="#download"
+              data-mac="https://github.com/godsonj64/timbre-site/releases/latest/download/Timbre-1.4.0-mac-arm64.dmg"
+              data-win="https://github.com/godsonj64/timbre-site/releases/latest/download/Timbre-1.4.0-win-x64.exe"
+              >Download Timbre <span aria-hidden="true">↓</span></a
+            >
+            <a class="pill pill-line" href="#workflow">See how it works <span aria-hidden="true">↘</span></a>
           </div>
-          <div class="card">
-            <h3>It edits</h3>
-            <p>
-              A real multi-track timeline. Cut, trim, crossfade, duck the music under the narration,
-              draw volume by hand, drop in transitions.
-            </p>
-          </div>
-          <div class="card">
-            <h3>It finishes</h3>
-            <p>
-              It measures your mix the way YouTube and the broadcasters measure it, then tells you
-              exactly what is off and fixes it on export.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ───────────────────────────────────────────── stages -->
-    <section id="stages" class="band alt">
-      <div class="wrap">
-        <p class="eyebrow">The work, in order</p>
-        <h2>Eight stages, left to right</h2>
-        <p class="sub">
-          Timbre lays the job out as a strip along the top of the window. You can jump around, but
-          left to right is the order the work actually happens in — and each stage hands the next one
-          what it needs.
-        </p>
-
-        <ol class="stages">
-          <li class="stage">
-            <div class="stage-text">
-              <p class="num">01</p>
-              <h3>Brief</h3>
-              <p>
-                What the piece is, who it is for, how long it runs, and where it is going. This is the
-                only place you choose the platform — and that one choice sets the canvas, the reading
-                speed, the loudness target and the export preset for everything downstream.
-              </p>
-            </div>
-            <figure class="shot">
-              <img src="img/02-brief.webp" alt="The Brief stage: format, duration, objective, audience, platforms and tone." width="1366" height="900" loading="lazy" />
-            </figure>
-          </li>
-
-          <li class="stage">
-            <div class="stage-text">
-              <p class="num">02</p>
-              <h3>Script</h3>
-              <p>
-                Write in sections — hook, point, turn, close — rather than one wall of text. Timbre
-                counts your words against the duration you asked for and tells you, live, whether the
-                script will actually fit the runtime. It measures your real reading speed from takes
-                you have already made.
-              </p>
-            </div>
-            <figure class="shot">
-              <img src="img/03-script.webp" alt="The Script stage: nine sections of a script with live word counts, a reading-speed estimate, and Timbre's own checks for pacing and unsourced claims." width="1320" height="900" loading="lazy" />
-            </figure>
-          </li>
-
-          <li class="stage">
-            <div class="stage-text">
-              <p class="num">03</p>
-              <h3>Voice</h3>
-              <p>
-                Pick the model, pick the voice, and direct the read. The performance knobs — energy,
-                authority, intimacy, tension, warmth — are sent to the model as an instruction with
-                every segment, so a change of direction is a change of performance, not a change of
-                pitch. Pauses come out as real silence. Numbers are spoken as words.
-              </p>
-            </div>
-            <figure class="shot">
-              <img src="img/04-voice.webp" alt="The Voice stage: voice identity, reference voice, and performance knobs." width="1366" height="900" loading="lazy" />
-            </figure>
-          </li>
-
-          <li class="stage stage-pair">
-            <div class="stage-text">
-              <p class="num">04 · 05</p>
-              <h3>Visuals &amp; Edit</h3>
-              <p>
-                Bring in footage and stills, and cut against the narration you just made. Split, trim,
-                slip, slide, roll. Draw a fade by dragging a corner. Mark in and out and lift or
-                extract the range. The music ducks under the voice automatically, and you can see the
-                shape of that duck on the timeline.
-              </p>
-            </div>
-            <div class="shot-pair">
-              <figure class="shot">
-                <img src="img/visuals-shots.webp" alt="The Visuals stage: an auto-planned shot list, each shot categorised -- typography, stock, generated, diagram -- with the reasoning behind it and its own approve or reject control." width="1320" height="900" loading="lazy" />
-              </figure>
-              <figure class="shot">
-                <img src="img/05-edit.webp" alt="The Edit stage: multi-track timeline with video, narration and music." width="1366" height="900" loading="lazy" />
-              </figure>
-            </div>
-          </li>
-
-          <li class="stage">
-            <div class="stage-text">
-              <p class="num">06</p>
-              <h3>Master</h3>
-              <p>
-                This is the part most tools leave to you. Timbre measures the finished mix against the
-                standard your platform actually uses, shows you the number, and says plainly what is
-                wrong — too loud, too wide a range, music competing with the voice. Then it fixes it
-                on export rather than making you guess.
-              </p>
-              <p class="aside">
-                There is also an optional insert rack for anyone who wants it: EQ, compression,
-                limiting, reverb, and your own VST3 or Audio Unit plug-ins. Every processor draws its
-                own response curve, so you can see what it is doing before you hear it.
-              </p>
-            </div>
-            <figure class="shot">
-              <img src="img/06-master.webp" alt="The Master stage: a large loudness readout, target rail and delivery profiles." width="1320" height="900" loading="lazy" />
-            </figure>
-          </li>
-
-          <li class="stage">
-            <div class="stage-text">
-              <p class="num">07 · 08</p>
-              <h3>Shorts &amp; Deliver</h3>
-              <p>
-                Timbre transcribes the finished piece on your machine, finds the moments worth
-                cutting, and crops them to a vertical frame with burnt-in captions. Then it exports —
-                at the right size, the right frame rate and the right loudness for each place you
-                said you were posting.
-              </p>
-            </div>
-            <figure class="shot">
-              <img src="img/01-projects.webp" alt="The project library: each project in its own folder, autosaved with rolling snapshots." width="1300" height="900" loading="lazy" />
-            </figure>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ───────────────────────────────────────────── voices -->
-    <section class="band">
-      <div class="wrap split">
-        <div class="split-text">
-          <p class="eyebrow">Voices</p>
-          <h2>Five to fifteen seconds is enough</h2>
-          <p>
-            Add a short, clean recording of one person speaking and type out exactly what they said.
-            That is a voice. From then on it reads anything you write, and it stays on your disk —
-            no upload, no enrolment, no account.
-          </p>
-          <p>
-            You can also describe a voice in plain language and let the model build one, or use the
-            preset voices a model ships with. Which of the three you get depends on the model; Timbre
-            tells you which each one supports before you download it.
-          </p>
-          <p class="note">
-            Clone only voices you have permission to use. Timbre keeps the description and credit you
-            write next to every voice for exactly this reason.
-          </p>
-        </div>
-        <figure class="shot">
-          <img src="img/08-voices.webp" alt="The voice library: saved reference voices with transcripts and durations." width="1366" height="900" loading="lazy" />
-        </figure>
-      </div>
-    </section>
-
-    <!-- ───────────────────────────────────────────── models -->
-    <section class="band alt">
-      <div class="wrap split reverse">
-        <div class="split-text">
-          <p class="eyebrow">Models</p>
-          <h2>Pick the one your computer can actually run</h2>
-          <p>
-            Fifteen open-weight models ship in the catalogue, ordered by quality and grouped by what
-            they ask of your machine. Each card tells you the download size, the memory it needs, the
-            languages it speaks and its licence — before you commit to the download.
-          </p>
-          <ul class="ticks">
-            <li><b>Flagship</b> — the best quality available, if you have the VRAM for it.</li>
-            <li><b>Balanced</b> — strong quality on a mid-range GPU.</li>
-            <li><b>Lightweight</b> — from 190 MB. Good on a CPU, good for drafts.</li>
-            <li><b>Sound &amp; music</b> — effects and instrument beds from a description.</li>
-            <li><b>Transcription</b> — captions and word timings, also local.</li>
+          <p class="hero-meta">Version 1.4.0 · macOS Apple Silicon + Intel · Windows x64</p>
+          <ul class="checks" aria-label="In short">
+            <li>No per-word billing</li>
+            <li>Nothing uploaded</li>
+            <li>15 open-weight models</li>
           </ul>
-          <p class="note">
-            Timbre warns you when a model is tight on memory for your machine, or when it would fall
-            back to the processor and run slower than realtime. It would rather tell you first.
+        </div>
+
+        <figure class="container window hero-window">
+          <img
+            src="img/05-edit.webp"
+            alt="Timbre’s Edit stage: the eight production stages across the top, a program monitor, and a multi-track timeline with video, narration waveforms and markers."
+            width="1366"
+            height="900"
+            fetchpriority="high"
+          />
+        </figure>
+
+        <div class="container stages-strip">
+          <p class="strip-label">One window · eight stages, left to right</p>
+          <ol class="strip">
+            <li><span>01</span>Brief</li>
+            <li><span>02</span>Script</li>
+            <li><span>03</span>Voice</li>
+            <li><span>04</span>Visuals</li>
+            <li><span>05</span>Edit</li>
+            <li><span>06</span>Master</li>
+            <li><span>07</span>Shorts</li>
+            <li><span>08</span>Deliver</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────────────────────── 01 what it is -->
+      <section class="section paper" id="product" aria-labelledby="product-title">
+        <div class="container split-head">
+          <div>
+            <p class="kicker"><span>01</span> / What it is</p>
+            <h2 id="product-title" class="reveal">A studio for anything with a voice in it.</h2>
+          </div>
+          <div class="reveal">
+            <p class="lead">
+              Explainers, documentaries, podcasts, ads, Shorts. One window takes you from a blank page
+              to a finished, correctly loud file — and every step of it runs on your own machine.
+            </p>
+            <ol class="numbered">
+              <li>
+                <span class="n">01</span>
+                <div>
+                  <h3>It speaks</h3>
+                  <p>Type a line and hear it read back in a voice you designed in words, cloned from a short recording, or picked from a model’s own presets.</p>
+                </div>
+              </li>
+              <li>
+                <span class="n">02</span>
+                <div>
+                  <h3>It edits</h3>
+                  <p>A real multi-track timeline. Cut, trim, crossfade, duck the music under the narration, draw volume by hand, drop in transitions.</p>
+                </div>
+              </li>
+              <li>
+                <span class="n">03</span>
+                <div>
+                  <h3>It finishes</h3>
+                  <p>It measures your mix the way YouTube and the broadcasters measure it, then tells you exactly what is off and fixes it on export.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────────────────────── 02 workflow -->
+      <section class="section paper-2" id="workflow" aria-labelledby="workflow-title">
+        <div class="container">
+          <p class="kicker"><span>02</span> / Workflow</p>
+          <h2 id="workflow-title" class="reveal">Eight stages, left to right.</h2>
+          <p class="section-sub reveal">
+            Timbre lays the job out as a strip along the top of the window. You can jump around, but left
+            to right is the order the work actually happens in — and each stage hands the next one what it
+            needs.
+          </p>
+
+          <ol class="cards">
+            <li class="card reveal">
+              <div class="card-head"><span class="n">01</span><span class="tag">Sets everything downstream</span></div>
+              <h3>Brief</h3>
+              <p>What the piece is, who it is for, how long it runs, and where it is going. That one choice of platform sets the canvas, the reading speed, the loudness target and the export preset.</p>
+              <figure class="card-shot"><img src="img/02-brief.webp" alt="The Brief stage: format, duration, objective, audience, platforms and tone." width="1366" height="900" loading="lazy" /></figure>
+            </li>
+            <li class="card reveal">
+              <div class="card-head"><span class="n">02</span><span class="tag">Fits the runtime</span></div>
+              <h3>Script</h3>
+              <p>Write in sections — hook, point, turn, close. Timbre counts your words against the duration you asked for and tells you, live, whether the script will fit, using your real reading speed.</p>
+              <figure class="card-shot"><img src="img/03-script.webp" alt="The Script stage: sections of a script with live word counts, a reading-speed estimate, and checks for pacing and unsourced claims." width="1320" height="900" loading="lazy" /></figure>
+            </li>
+            <li class="card reveal">
+              <div class="card-head"><span class="n">03</span><span class="tag">Directs the read</span></div>
+              <h3>Voice</h3>
+              <p>Pick the model and the voice, then direct the performance — energy, authority, intimacy, tension, warmth. Pauses come out as real silence; numbers are spoken as words.</p>
+              <figure class="card-shot"><img src="img/04-voice.webp" alt="The Voice stage: voice identity, reference voice, and performance knobs." width="1366" height="900" loading="lazy" /></figure>
+            </li>
+            <li class="card reveal">
+              <div class="card-head"><span class="n">04 · 05</span><span class="tag">Cuts to the voice</span></div>
+              <h3>Visuals &amp; Edit</h3>
+              <p>Plan the shots, bring in footage and stills, and cut against the narration. Split, trim, slip, slide, roll; draw a fade by dragging a corner. The music ducks under the voice on its own.</p>
+              <figure class="card-shot"><img src="img/visuals-shots.webp" alt="The Visuals stage: an auto-planned shot list, each shot categorised with the reasoning behind it and its own approve or reject control." width="1320" height="900" loading="lazy" /></figure>
+            </li>
+            <li class="card reveal">
+              <div class="card-head"><span class="n">06</span><span class="tag">Measured, not guessed</span></div>
+              <h3>Master</h3>
+              <p>Timbre measures the finished mix against the standard your platform uses, says plainly what is wrong, and fixes it on export. An optional insert rack takes EQ, compression, reverb and your own VST3 or Audio Unit plug-ins.</p>
+              <figure class="card-shot"><img src="img/06-master.webp" alt="The Master stage: a large loudness readout, target rail and delivery profiles." width="1320" height="900" loading="lazy" /></figure>
+            </li>
+            <li class="card card-new reveal">
+              <div class="card-head"><span class="n">07 · 08</span><span class="tag tag-hot">New in 1.4</span></div>
+              <h3>Shorts &amp; Deliver</h3>
+              <p>Timbre finds the moments that stand on their own, tightens the pauses, punches in to hide the jumps and keeps captions clear of each app’s buttons. Then it exports at the right size and loudness for everywhere you post.</p>
+              <figure class="card-shot"><img src="img/shorts-studio.webp" alt="A Short in Timbre: its score and reasons, the 9:16 framing with TikTok’s covered areas shaded, and the Cut and motion panel with pauses and fillers cut and punch-ins on every jump cut." width="1394" height="758" loading="lazy" /></figure>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────────────────────── 03 voices -->
+      <section class="section ink" id="voices" aria-labelledby="voices-title">
+        <div class="container split">
+          <div class="split-text">
+            <p class="kicker"><span>03</span> / Voices</p>
+            <h2 id="voices-title" class="reveal">Five to fifteen seconds <span class="dim">is enough.</span></h2>
+            <p>
+              Add a short, clean recording of one person speaking and type out exactly what they said.
+              That is a voice. From then on it reads anything you write, and it stays on your disk — no
+              upload, no enrolment, no account.
+            </p>
+            <p>
+              You can also describe a voice in plain language and let the model build one, or use the
+              preset voices a model ships with. Timbre tells you which of the three a model supports
+              before you download it.
+            </p>
+            <p class="fine">
+              Clone only voices you have permission to use. Timbre keeps the description and credit you
+              write next to every voice for exactly this reason.
+            </p>
+          </div>
+          <figure class="window reveal">
+            <img src="img/08-voices.webp" alt="The voice library: saved reference voices with transcripts and durations." width="1366" height="900" loading="lazy" />
+          </figure>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────────────────────── 04 models -->
+      <section class="section paper" id="models" aria-labelledby="models-title">
+        <div class="container split reverse">
+          <div class="split-text">
+            <p class="kicker"><span>04</span> / Models</p>
+            <h2 id="models-title" class="reveal">Pick the one your computer can actually run.</h2>
+            <p>
+              Fifteen open-weight models ship in the catalogue, ordered by quality and grouped by what
+              they ask of your machine. Each card shows the download size, the memory it needs, the
+              languages it speaks and its licence — before you commit.
+            </p>
+            <ul class="tiers">
+              <li><b>Flagship</b><span>The best quality available, if you have the VRAM for it.</span></li>
+              <li><b>Balanced</b><span>Strong quality on a mid-range GPU.</span></li>
+              <li><b>Lightweight</b><span>From 190 MB. Good on a CPU, good for drafts.</span></li>
+              <li><b>Sound &amp; music</b><span>Effects and instrument beds from a description.</span></li>
+              <li><b>Transcription</b><span>Captions and word timings, also local.</span></li>
+            </ul>
+          </div>
+          <figure class="window reveal">
+            <img src="img/07-models.webp" alt="The model library: cards showing size, memory, languages and licence." width="1366" height="900" loading="lazy" />
+          </figure>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────────────────────── 05 loudness -->
+      <section class="section ink loud" id="loudness" aria-labelledby="loud-title">
+        <div class="container">
+          <p class="kicker center"><span>05</span> / Loudness</p>
+          <h2 id="loud-title" class="center reveal">Every platform turns your audio down.</h2>
+          <p class="section-sub center reveal">
+            YouTube, Spotify and the rest measure how loud your piece is and normalise it to their own
+            target. Master too loud and they turn you down — along with the dynamics you squashed to get
+            there. Timbre masters to the target instead.
+          </p>
+          <div class="targets reveal">
+            <div><b>−14</b><span>LUFS</span><i>YouTube, Shorts, Reels, TikTok, X, LinkedIn</i></div>
+            <div><b>−16</b><span>LUFS</span><i>Podcast apps, web embeds</i></div>
+            <div><b>−23</b><span>LUFS</span><i>Broadcast, EBU R128</i></div>
+          </div>
+          <p class="section-sub center fine">
+            Seven mastering profiles — documentary, podcast, advertisement, Shorts, broadcast, lecture,
+            cinematic — decide how the mix sounds. The platform you chose in the brief decides how loud it
+            is delivered.
           </p>
         </div>
-        <figure class="shot">
-          <img src="img/07-models.webp" alt="The model library: cards showing size, memory, languages and licence." width="1366" height="900" loading="lazy" />
-        </figure>
-      </div>
-    </section>
+      </section>
 
-    <!-- ───────────────────────────────────────────── loudness -->
-    <section class="band">
-      <div class="wrap narrow">
-        <p class="eyebrow">Why your videos sound quieter than everyone else's</p>
-        <h2>Every platform turns your audio down</h2>
-        <p class="big">
-          YouTube, Spotify and the rest all measure how loud your piece is and normalise it to their
-          own target. If you master too loud, they turn you down — and everything you gained by
-          squashing it is lost, along with the dynamics. Timbre masters to the target instead.
-        </p>
-        <div class="targets">
-          <div><b>−14</b><span>LUFS</span><i>YouTube, Shorts, Reels, TikTok, X, LinkedIn</i></div>
-          <div><b>−16</b><span>LUFS</span><i>Podcast apps, web embeds</i></div>
-          <div><b>−23</b><span>LUFS</span><i>Broadcast (EBU R128)</i></div>
+      <!-- ─────────────────────────────────────────────────── 06 local -->
+      <section class="section paper" id="local" aria-labelledby="local-title">
+        <div class="container split-head">
+          <div>
+            <p class="kicker"><span>06</span> / Why local</p>
+            <h2 id="local-title" class="reveal">Your studio. <span class="dim">Your disk. Nobody else’s servers.</span></h2>
+          </div>
+          <ol class="numbered reveal">
+            <li><span class="n">01</span><div><h3>Nothing is uploaded</h3><p>Your script, your voice recordings and your footage stay on your disk. There is no account and no server to trust.</p></div></li>
+            <li><span class="n">02</span><div><h3>No meter running</h3><p>Re-record a line forty times if you want. There is no per-character cost, so you can afford to get it right.</p></div></li>
+            <li><span class="n">03</span><div><h3>It works on a plane</h3><p>Once the models are downloaded, Timbre needs no connection at all. Your studio does not stop when the wifi does.</p></div></li>
+            <li><span class="n">04</span><div><h3>It keeps working</h3><p>Open weights on your own disk cannot be deprecated, rate-limited or repriced out from under a project you already shipped.</p></div></li>
+          </ol>
         </div>
-        <p class="sub center">
-          Seven mastering profiles — documentary, podcast, advertisement, shorts, broadcast, lecture,
-          cinematic — decide how the mix <em>sounds</em>. The platform you chose in the brief decides
-          how loud it is <em>delivered</em>. Nothing is guessed: the moves come from measuring your
-          actual stems.
-        </p>
-      </div>
-    </section>
+      </section>
 
-    <!-- ───────────────────────────────────────────── local -->
-    <section class="band alt">
-      <div class="wrap">
-        <p class="eyebrow">Why local</p>
-        <h2>The part that matters most</h2>
-        <div class="grid four">
-          <div class="card">
-            <h3>Nothing is uploaded</h3>
-            <p>
-              Your script, your voice recordings and your footage stay on your disk. There is no
-              account and no server to trust.
+      <!-- ─────────────────────────────────────────────────── 07 download -->
+      <section class="section ink download" id="download" aria-labelledby="download-title">
+        <div class="container download-grid">
+          <div>
+            <p class="kicker"><span>07</span> / Download</p>
+            <h2 id="download-title" class="reveal">Make the next one sound finished.</h2>
+            <p class="lead-ink">
+              Timbre is a desktop app for macOS and Windows. Download it, open it, and it sets up its own
+              speech engine on first run. The smallest voice is 190 MB and runs on a processor; the
+              flagship models want a graphics card with 6 GB or more.
             </p>
           </div>
-          <div class="card">
-            <h3>No meter running</h3>
-            <p>
-              Re-record a line forty times if you want. There is no per-character cost, so you can
-              afford to get it right.
+          <div class="release reveal">
+            <div class="release-head">
+              <div>
+                <p class="release-label">Latest stable release</p>
+                <p class="release-name">Timbre 1.4.0</p>
+              </div>
+              <a class="release-notes" href="https://github.com/godsonj64/timbre-site/releases/latest">Release notes <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="tiles">
+              <a class="tile tile-main" href="https://github.com/godsonj64/timbre-site/releases/latest/download/Timbre-1.4.0-mac-arm64.dmg" download>
+                <span class="tile-os">macOS</span>
+                <b>Apple Silicon</b>
+                <span class="tile-file">DMG · M1 and later</span>
+                <span class="tile-go" aria-hidden="true">↓</span>
+              </a>
+              <a class="tile" href="https://github.com/godsonj64/timbre-site/releases/latest/download/Timbre-1.4.0-mac-x64.dmg" download>
+                <span class="tile-os">macOS</span>
+                <b>Intel</b>
+                <span class="tile-file">DMG · x64</span>
+                <span class="tile-go" aria-hidden="true">↓</span>
+              </a>
+              <a class="tile" href="https://github.com/godsonj64/timbre-site/releases/latest/download/Timbre-1.4.0-win-x64.exe" download>
+                <span class="tile-os">Windows</span>
+                <b>x64</b>
+                <span class="tile-file">EXE · Windows 10 and 11</span>
+                <span class="tile-go" aria-hidden="true">↓</span>
+              </a>
+            </div>
+            <p class="release-fine">
+              Neither build is signed yet, so the first launch needs one extra click: Control-click → Open on
+              a Mac, or More info → Run anyway on Windows. Model weights carry their own licences, shown on
+              every card before you download — check that yours covers commercial work before you ship it.
             </p>
           </div>
-          <div class="card">
-            <h3>It works on a plane</h3>
-            <p>
-              Once the models are downloaded, Timbre needs no connection at all. Your studio does not
-              stop when the wifi does.
-            </p>
-          </div>
-          <div class="card">
-            <h3>It keeps working</h3>
-            <p>
-              Open weights on your own disk cannot be deprecated, rate-limited or repriced out from
-              under a project you already shipped.
-            </p>
-          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand" href="#top"><svg class="brand-mark" aria-hidden="true"><use href="#mark" /></svg><span>Timbre</span></a>
+          <p>A local text-to-speech studio and video sound editor. Runs open-weight models on your own machine — no Python, no cloud, no API keys.</p>
+        </div>
+        <div>
+          <h2>Made by</h2>
+          <p>Created at Axiomatic Research Lab by Godson Johnson.</p>
+        </div>
+        <div>
+          <h2>Resources</h2>
+          <ul>
+            <li><a href="manual.html">User Manual</a></li>
+            <li><a href="https://github.com/godsonj64/timbre-site/releases/latest">Release notes</a></li>
+            <li><a href="https://github.com/godsonj64/timbre-site/releases">All downloads</a></li>
+          </ul>
         </div>
       </div>
-    </section>
-
-    <!-- ───────────────────────────────────────────── get -->
-    <section id="get" class="band">
-      <div class="wrap narrow">
-        <h2>What you need</h2>
-        <div class="grid two">
-          <div class="card">
-            <h3>A Mac or a PC</h3>
-            <p>
-              macOS on Apple Silicon or Intel, or Windows 10/11 on x64. Timbre is a desktop app — download
-              it, open it, and it sets up its own speech engine on first run.
-            </p>
-          </div>
-          <div class="card">
-            <h3>Room for the models</h3>
-            <p>
-              The smallest voice is 190 MB and runs comfortably on a processor. The flagship models
-              want a graphics card with 6 GB or more. Start small; you can always download a bigger
-              one later.
-            </p>
-          </div>
-        </div>
-        <p class="sub center" style="margin-top: 26px">
-          Model weights carry their own licences, shown on every card before you download —
-          check that the licence covers your intended use before you ship commercial work.
-        </p>
-        <div class="cta center">
-          <a class="btn btn-primary" href="https://github.com/godsonj64/timbre-site/releases/latest/download/Timbre-1.4.0-mac-arm64.dmg" download>Download for macOS</a>
-          <a class="btn btn-primary" href="https://github.com/godsonj64/timbre-site/releases/latest/download/Timbre-1.4.0-win-x64.exe" download>Download for Windows</a>
-        </div>
-        <p class="sub center" style="margin-top: 14px; font-size: 14px">
-          The macOS build is for Apple Silicon (M1 and later) —
-          <a href="https://github.com/godsonj64/timbre-site/releases/latest/download/Timbre-1.4.0-mac-x64.dmg" download>on an Intel Mac, get this build instead</a>.
-          Neither is signed yet, so the first launch needs one extra click: Control-click &rarr; Open
-          on a Mac, or More info &rarr; Run anyway on Windows.
-        </p>
-      </div>
-    </section>
-
-    <footer class="foot">
-      <div class="wrap">
-        <div class="foot-mark" aria-hidden="true">
-          <svg viewBox="0 0 1400 420" class="wordmark" focusable="false">
-            <text x="700" y="283" text-anchor="middle" font-size="216" letter-spacing="-9">
-              Timbre<tspan font-size="54" font-weight="600" letter-spacing="0" dy="-115">&#174;</tspan>
-            </text>
-          </svg>
-        </div>
-        <p>
-          A local text-to-speech studio and video sound editor. Runs open-weight models on your own
-          machine — no Python, no cloud, no API keys.
-        </p>
-        <p class="foot-manual"><a href="manual.html">User Manual</a> · Complete workflow, controls, mastering, Shorts and delivery reference.</p>
-        <p class="fine">
-          Interface set in Inter (SIL OFL 1.1). Screenshots are of the application
-          running unmodified.
-        </p>
+      <div class="container footer-base">
+        <span>Interface set in Inter and Geist Mono (SIL OFL 1.1). Screenshots are of the application running unmodified.</span>
+        <span>Timbre 1.4.0</span>
       </div>
     </footer>
+
+    <script>
+      // The hero button downloads the build for this computer; without
+      // JavaScript, or on anything else, it goes to the download section.
+      (function () {
+        var btn = document.getElementById('heroDownload');
+        var ua = navigator.userAgent || '';
+        var touchMac = /Macintosh/.test(ua) && navigator.maxTouchPoints > 1; // an iPad asking for the desktop site
+        if (btn && /Windows NT/.test(ua)) {
+          btn.href = btn.dataset.win;
+          btn.setAttribute('download', '');
+          btn.firstChild.nodeValue = 'Download for Windows ';
+        } else if (btn && /Macintosh|Mac OS X/.test(ua) && !touchMac) {
+          btn.href = btn.dataset.mac;
+          btn.setAttribute('download', '');
+          btn.firstChild.nodeValue = 'Download for macOS ';
+        }
+        // Sections rise in as they arrive, unless motion is turned down.
+        if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        document.documentElement.classList.add('motion');
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+          });
+        }, { rootMargin: '0px 0px -8% 0px' });
+        document.querySelectorAll('.reveal').forEach(function (n) { io.observe(n); });
+      })();
+    </script>
   </body>
 </html>
